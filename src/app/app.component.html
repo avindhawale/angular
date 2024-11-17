@@ -4,6 +4,25 @@
 
 </div>
 
-@for(course of courses; track course.id){
-<course-card [course]="course" (selectedCourse)="onSelectedCourse($event)"></course-card>
+@for(course of courses; track course.id; let index = $index; let first = $first; let last = $last; let count = $count;
+let even=$even; let odd = $odd;){
+<course-card [course]="course" (selectedCourse)="onSelectedCourse($event)" [index]="index" [class.is-first]="first"
+    [class.is-last]="last" [class.is-even]="even" [class.is-odd]="odd">
+</course-card>
 }
+@empty{
+<h1>No courses found</h1>
+}
+
+<!-- There is no need to assign option in variables, we can directly use them as below. -->
+<!-- @for(course of courses; track course.id;){
+<course-card 
+    [course]="course" 
+    (selectedCourse)="onSelectedCourse($event)" 
+    [index]="$index" 
+    [class.is-first]="$first"
+    [class.is-last]="$last" 
+    [class.is-even]="$even" 
+    [class.is-odd]="$odd">
+</course-card>
+} -->
