@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { HighlighterDirective } from "src/app/directives/highlighter.directive";
 import { Course } from "src/app/model/course";
 
 @Component({
   selector: "course-card",
   standalone: true,
-  imports: [],
+  imports: [HighlighterDirective],
   templateUrl: "./course-card.component.html",
   styleUrl: "./course-card.component.css",
 })
