@@ -9,10 +9,8 @@ export class HighlighterDirective {
 
   @HostListener("mouseenter") onMouseEnter() {
     this.renderer.addClass(this.element.nativeElement, "highlight-product");
-    console.log("enter");
   }
   @HostListener("mouseout") onMouseOut() {
-    console.log("out");
     this.renderer.removeClass(this.element.nativeElement, "highlight-product");
   }
 }
