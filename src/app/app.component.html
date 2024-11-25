@@ -8,6 +8,13 @@
 let even=$even; let odd = $odd;){
 <course-card [course]="course" (selectedCourse)="onSelectedCourse($event)" [index]="index" [class.is-first]="first"
     [class.is-last]="last" [class.is-even]="even" [class.is-odd]="odd">
+
+    <!-- Content Projection in Angular refers to the process of projecting or inserting content from 
+    a parent component into a designated area within a child component's template. 
+    This is achieved by using the <ng-content> element in the child component's template, 
+    which acts as a placeholder for the content to be projected. -->
+    <h5>This content is being projected</h5>
+    <h6>This content is also being projected</h6>
 </course-card>
 }
 @empty{

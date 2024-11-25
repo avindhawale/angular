@@ -5,6 +5,14 @@
         <div class="course-title">
             {{index}} {{course.description}}
         </div>
+
+        <!-- Content is being projected where the ng-content tag written -->
+        <!-- <ng-content></ng-content> -->
+
+        <!-- You can decide which content to be visible by specifying its 
+            tag or class name in 'select' attribute. -->
+        <ng-content select="h6"></ng-content>
+
         @if(course.iconUrl){
         <img width="300" alt="Angular Logo" [src]="course.iconUrl">
         }@else{
