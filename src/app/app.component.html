@@ -1,4 +1,4 @@
-<div class="top-menu">
+<div class="top-menu" #topMenu>
 
     <img class="logo" src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
 
@@ -14,7 +14,7 @@ let even=$even; let odd = $odd;){
     This is achieved by using the <ng-content> element in the child component's template, 
     which acts as a placeholder for the content to be projected. -->
     <h5>This content is being projected</h5>
-    <h6>This content is also being projected</h6>
+    <h6 #cpContent>This content is also being projected</h6>
 </course-card>
 }
 @empty{

@@ -1,4 +1,13 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import {
+  AfterContentInit,
+  AfterViewInit,
+  Component,
+  ContentChild,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+} from "@angular/core";
 import { BeautifierDirective } from "src/app/directives/beautifier.directive";
 import { HighlighterDirective } from "src/app/directives/highlighter.directive";
 import { Course } from "src/app/model/course";
