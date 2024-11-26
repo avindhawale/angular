@@ -4,6 +4,8 @@
 
 </div>
 
+<defer></defer>
+
 @for(course of courses; track course.id; let index = $index; let first = $first; let last = $last; let count = $count;
 let even=$even; let odd = $odd;){
 <course-card [course]="course" (selectedCourse)="onSelectedCourse($event)" [index]="index" [class.is-first]="first"

@@ -1,0 +1,8 @@
+.defer-container {
+  display: flex;
+
+  .defer-block {
+    border: 1px solid;
+    padding: 10px;
+  }
+}

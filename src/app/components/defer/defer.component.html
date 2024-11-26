@@ -1,0 +1,36 @@
+<div class="defer-container">
+    @defer {
+    <img src="https://wallpaper.forfun.com/fetch/0b/0bc739968eeb709d8eebbdb132141cb8.jpeg" width="500">
+    }
+    @placeholder (minimum 2s){
+    <h3>Image is loading...</h3>
+    }
+
+    <div class="defer-block">
+        @defer (on interaction){
+        <p>Thanks for interacting</p>
+        }
+        @placeholder{
+        <p>This is defer content which will change on interaction</p>
+        }
+    </div>
+    <div class="defer-block">
+        <div #greeting>Hello!</div>
+        @defer (on interaction(greeting)){
+        <p>You clicked Hello</p>
+        }
+        @placeholder{
+        <p>Click on Hello text</p>
+        }
+    </div>
+    <div class="defer-block">
+        <div #greeting1>Hey!</div>
+        @defer (on hover(greeting1)){
+        <p>You hovered Hey</p>
+        }
+        @placeholder{
+        <p>Hover on 'Hey' text</p>
+        }
+    </div>
+
+</div>
