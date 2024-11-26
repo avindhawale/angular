@@ -1,0 +1,47 @@
+<div class="courses" highlighter>
+
+    <div class="course-card">
+
+        <div class="course-title">
+            {{index}} {{course.description}}
+        </div>
+
+        <!-- Content is being projected where the ng-content tag written -->
+        <!-- <ng-content></ng-content> -->
+
+        <!-- You can decide which content to be visible by specifying its 
+            tag or class name in 'select' attribute. -->
+        <ng-content select="h6"></ng-content>
+
+        @if(course.iconUrl){
+        <img width="300" alt="Angular Logo" [src]="course.iconUrl">
+        }@else{
+        <h2>No image available</h2>
+        }
+
+        <div class="course-description">
+            {{course.longDescription}}
+        </div>
+
+        <div class="course-category">
+            @switch(course.category){
+            @case("INTERMEDIATE"){
+            <div class="category">INTERMEDIATE</div>
+            }
+            @case("BEGINNER"){
+            <div class="category">BEGINNER</div>
+            }
+            @case("ADVANCED"){
+            <div class="category">ADVANCED</div>
+            }
+            @default{
+            <div class="category">UNKNOWN</div>
+            }
+            }
+        </div>
+
+        <button (click)="courseClicked()" beautifier>View course</button>
+
+    </div>
+
+</div>
