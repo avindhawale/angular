@@ -14,23 +14,15 @@ import { Course } from "./model/course";
 import { CourseService } from "./services/course.service";
 import { HttpClient } from "@angular/common/http";
 
-function courseServiceProvider(http: HttpClient) {
-  return new CourseService(http);
-}
-
-const COURSE_SERVICE = new InjectionToken<CourseService>("COURSE_SERVICE");
-
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"],
-  providers: [
-    {
-      provide: COURSE_SERVICE,
-      useFactory: courseServiceProvider,
-      deps: [HttpClient],
-    },
-  ],
+  providers: [CourseService],
+  /*with this Angular knows that 'CourseService' is the unique identifier of the dependency is being used as an injection token.
+  And also this is a constructor function that allows Angular to instantiate the dependency itself.
+  So with this, the dependency injection system has all the necessary information for knowing how to create here the courses service dependency.
+  */
 })
 export class AppComponent implements AfterViewInit, OnInit {
   courses = COURSES;
@@ -54,7 +46,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     console.log(course);
   }
 
-  constructor(@Inject(COURSE_SERVICE) private courseService: CourseService) {}
+  constructor(private courseService: CourseService) {}
 
   ngOnInit(): void {
     this.courseService.getData();
