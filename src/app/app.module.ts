@@ -1,10 +1,11 @@
-import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AppComponent } from "./app.component";
 import { CourseCardComponent } from "./components/course-card/course-card.component";
 import { DeferComponent } from "./components/defer/defer.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +14,7 @@ import { DeferComponent } from "./components/defer/defer.component";
     BrowserAnimationsModule,
     CourseCardComponent,
     DeferComponent,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
