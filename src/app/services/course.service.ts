@@ -1,9 +1,15 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
+let counter = 0;
+
 @Injectable()
 export class CourseService {
-  constructor(private http: HttpClient) {}
+  id: number;
+  constructor(private http: HttpClient) {
+    counter++;
+    this.id = counter;
+  }
 
   getData() {
     this.http

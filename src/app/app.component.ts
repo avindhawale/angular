@@ -46,7 +46,9 @@ export class AppComponent implements AfterViewInit, OnInit {
     console.log(course);
   }
 
-  constructor(private courseService: CourseService) {}
+  constructor(private courseService: CourseService) {
+    console.log("App Component : ", this.courseService.id);
+  }
 
   ngOnInit(): void {
     this.courseService.getData();
