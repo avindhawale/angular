@@ -3,13 +3,15 @@ import { Injectable } from "@angular/core";
 
 let counter = 0;
 
-@Injectable()
+@Injectable({
+  providedIn: "root", // Tree-Shakeable Provider
+  /**
+   * The angular dependency injection system works in a lazy way and if a service is not requested by any
+      dependency, the provider will never get called and the service will never get created.
+   */
+})
 export class CourseService {
-  id: number;
-  constructor(private http: HttpClient) {
-    counter++;
-    this.id = counter;
-  }
+  constructor(private http: HttpClient) {}
 
   getData() {
     this.http
