@@ -2,8 +2,6 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
-  Inject,
-  InjectionToken,
   OnInit,
   ViewChild,
   ViewChildren,
@@ -12,7 +10,6 @@ import { COURSES } from "../db-data";
 import { CourseCardComponent } from "./components/course-card/course-card.component";
 import { Course } from "./model/course";
 import { CourseService } from "./services/course.service";
-import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-root",
@@ -21,6 +18,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class AppComponent implements AfterViewInit, OnInit {
   courses = COURSES;
+  lifeCycleCourse: Course = COURSES[0];
 
   @ViewChild("topMenu", { read: ElementRef })
   topMenu: ElementRef;
@@ -45,5 +43,16 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   ngOnInit(): void {
     this.courseService.getData();
+  }
+
+  destroyLifeCycleComponent(): void {
+    this.lifeCycleCourse = null;
+  }
+  changeDataLifeCycleComponent(): void {
+    let newObj = {
+      ...this.lifeCycleCourse,
+      description: "description is changed",
+    };
+    this.lifeCycleCourse = newObj;
   }
 }

@@ -1,9 +1,19 @@
+<!-- This is life-cycle component -->
+<div *ngIf="lifeCycleCourse">
+    <button (click)="destroyLifeCycleComponent()">Destroy</button>
+    <button (click)="changeDataLifeCycleComponent()">Edit</button>
+    <life-cycle [course]="lifeCycleCourse"></life-cycle>
+</div>
+<!-- ----------------------------- -->
+
+
 <div class="top-menu" #topMenu>
 
     <img class="logo" src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
 
 </div>
 
+<!-- This is defer component -->
 <defer></defer>
 
 @for(course of courses; track course.id; let index = $index; let first = $first; let last = $last; let count = $count;

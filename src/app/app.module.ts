@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import { CourseCardComponent } from "./components/course-card/course-card.component";
 import { DeferComponent } from "./components/defer/defer.component";
 import { HttpClientModule } from "@angular/common/http";
+import { LifeCycleComponent } from "./components/life-cycle/life-cycle.component";
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { HttpClientModule } from "@angular/common/http";
     CourseCardComponent,
     DeferComponent,
     HttpClientModule,
+    LifeCycleComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
